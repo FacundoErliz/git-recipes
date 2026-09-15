@@ -5,18 +5,21 @@ const btnAdd = document.getElementById("btn-add") as HTMLButtonElement | null;
 const inpName = document.getElementById(
   "inp-name",
 ) as HTMLInputElement | null;
+const inpDesc = document.getElementById(
+  "inp-desc",
+) as HTMLInputElement | null;
 const inpCategory = document.getElementById(
   "inp-category",
 ) as HTMLSelectElement | null;
 
 const mainRecipeList = new RecipeList();
 
-if (btnAdd && inpName && inpCategory) {
+if (btnAdd && inpName && inpCategory && inpDesc) {
   btnAdd.addEventListener("click", () => {
     const recipesErrorContainer = document.getElementById("add-recipes-error");
     const recipesError = document.getElementById("add-recipes-error-msg");
     try {
-      const newRecipe = new Recipe(inpName.value);
+      const newRecipe = new Recipe(inpName.value, inpDesc.value);
       newRecipe.category = inpCategory.value;
       mainRecipeList.add(newRecipe);
       clearInputs(inpName, inpCategory);
