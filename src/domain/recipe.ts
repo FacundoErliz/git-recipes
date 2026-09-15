@@ -1,6 +1,7 @@
 export class Recipe {
   _name!: string;
   _category?: string;
+  _tiempo?: string;
 
   constructor(aName: string) {
     this.name = aName;
@@ -27,6 +28,6 @@ export class Recipe {
   }
 
   toString(): string {
-    return `Receta: ${this.name} - categoría: ${this.category}`;
+    return `Receta: ${this.name} - categoría: ${this.category} - tiempo prep: ${this._tiempo} minutos`;
   }
 }
