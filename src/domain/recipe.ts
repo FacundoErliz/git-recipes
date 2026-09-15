@@ -2,10 +2,12 @@ export class Recipe {
   _name!: string;
   _category?: string;
   _desc?: string;
+  _tiempo?: string;
 
-  constructor(aName: string, aDesc: string) {
+  constructor(aName: string, aDesc: string, aTiempo: string) {
     this.name = aName;
     this._desc = aDesc;
+    this._tiempo = aTiempo;
   }
 
   get name(): string {
@@ -29,6 +31,6 @@ export class Recipe {
   }
 
   toString(): string {
-    return `Receta: ${this.name} - categoría: ${this.category} - descripción: ${this._desc}` ;
+    return `Receta: ${this.name} - categoría: ${this.category} - descripción: ${this._desc} - tiempo prep: ${this._tiempo}` ;
   }
 }
